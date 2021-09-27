@@ -1,5 +1,4 @@
 var timeStart;
-var timeEnd;
 var isBlur = false;
 var interval = 500;
 window.onblur = ()=>{
@@ -9,9 +8,6 @@ window.onblur = ()=>{
 }
 window.onfocus = ()=>{
     isBlur = false;
-    timeEnd = Date.now();
-    let timer = document.querySelector("#timer");
-    timer.innerText = "Not blur"
 }
 function setText(){
     if(isBlur){
