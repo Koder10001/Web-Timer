@@ -1,6 +1,6 @@
 var timeStart;
 var isBlur = false;
-var interval = 500;
+var interval = 300;
 window.onblur = ()=>{
     timeStart = Date.now();
     isBlur = true;
@@ -8,11 +8,12 @@ window.onblur = ()=>{
 }
 window.onfocus = ()=>{
     isBlur = false;
+    setText();
 }
 function setText(){
+    let timer = document.querySelector("#timer");
+    timer.innerHTML = parseInt((Date.now() - timeStart)/1000) + "s";
     if(isBlur){
-        let timer = document.querySelector("#timer");
-        timer.innerHTML = parseInt((Date.now() - timeStart)/1000) + "s";
+        setTimeout(setText,interval)
     }
-    setTimeout(setText,interval)
 }
