@@ -4,7 +4,7 @@ var interval = 300;
 window.onblur = ()=>{
     timeStart = Date.now();
     isBlur = true;
-    setTimeout(setText,interval)
+    setText();
 }
 window.onfocus = ()=>{
     isBlur = false;
